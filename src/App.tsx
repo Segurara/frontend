@@ -3,6 +3,7 @@ import { HomePage } from './pages/HomePage';
 import { ProductPage } from './pages/ProductPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
+import { CookieConsent } from './components/CookieConsent';
 
 type Route = 'home' | 'product' | 'privacy' | 'terms';
 
@@ -22,7 +23,7 @@ function App() {
     setRoute(nextRoute);
   };
 
-  return route === 'product' ? <ProductPage onHome={() => navigate('home')} onPrivacy={() => navigate('privacy')} onTerms={() => navigate('terms')} /> : route === 'privacy' ? <PrivacyPage onHome={() => navigate('home')} /> : route === 'terms' ? <TermsPage onHome={() => navigate('home')} /> : <HomePage onProduct={() => navigate('product')} onHome={() => navigate('home')} onPrivacy={() => navigate('privacy')} onTerms={() => navigate('terms')} />;
+  return (<>{route === 'product' ? <ProductPage onHome={() => navigate('home')} onPrivacy={() => navigate('privacy')} onTerms={() => navigate('terms')} /> : route === 'privacy' ? <PrivacyPage onHome={() => navigate('home')} /> : route === 'terms' ? <TermsPage onHome={() => navigate('home')} /> : <HomePage onProduct={() => navigate('product')} onHome={() => navigate('home')} onPrivacy={() => navigate('privacy')} onTerms={() => navigate('terms')} />}<CookieConsent /></>);
 }
 
 export default App;

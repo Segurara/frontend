@@ -103,3 +103,19 @@ h1 em, h2 em { color: #c4b5fd; font-style: normal; }
 .privacy-policy ul { margin: 0 0 18px; padding-left: 22px; }.privacy-policy li { margin: 4px 0; }
 .privacy-policy a { color: #a78bfa; }.privacy-policy a:hover { text-decoration: underline; }
 
+/* Cookie consent */
+.cookie-banner { position: fixed; left: 20px; right: 20px; bottom: 20px; z-index: 50; border-radius: 14px; border: 1px solid rgba(196,181,253,.2); background: rgba(22,11,43,.94); backdrop-filter: blur(16px); box-shadow: 0 22px 60px rgba(0,0,0,.45); padding: 16px 20px; animation: cookie-in .4s ease; }
+@keyframes cookie-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.cookie-content { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+.cookie-copy { display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; flex: 1; min-width: 220px; }
+.cookie-copy strong { color: #f3eef7; font-size: 13px; white-space: nowrap; }
+.cookie-copy p { color: #a9a2b6; font-size: 12px; line-height: 1.55; margin: 0; max-width: 620px; }
+.cookie-copy a { color: #c4b5fd; }
+.cookie-actions { display: flex; gap: 9px; align-items: center; }
+.cookie-accept, .cookie-decline { display: inline-flex; align-items: center; gap: 6px; border-radius: 9px; padding: 10px 15px; font-size: 12px; font-weight: 700; cursor: pointer; transition: transform .2s, box-shadow .2s, background .2s; }
+.cookie-accept { color: #fff; background: linear-gradient(135deg, #8b5cf6, #6d28d9); border: 1px solid rgba(196,181,253,.38); box-shadow: 0 8px 26px rgba(109,40,217,.28); }
+.cookie-accept:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(139,92,246,.35); }
+.cookie-decline { color: #ece8f5; background: rgba(255,255,255,.045); border: 1px solid rgba(196,181,253,.18); }
+.cookie-decline:hover { transform: translateY(-2px); }
+@media (max-width: 560px) { .cookie-banner { left: 10px; right: 10px; bottom: 10px; }.cookie-actions { width: 100%; }.cookie-accept, .cookie-decline { flex: 1; justify-content: center; } }
+
