@@ -5,8 +5,8 @@ import { Logo } from './Logo';
 export function Header({ onProduct, onHome, product = false }: { onProduct?: () => void; onHome: () => void; product?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState('');
-  const links = product ? ['Overview', 'Investigations', 'Entities', 'Telemetry'] : ['Platform', 'Capabilities', 'How it works', 'Pricing', 'FAQ', 'Contact'];
-  const hrefs = product ? ['#workspace', '#workspace', '#workspace', '#workspace'] : ['how-it-works', 'capabilities', 'how-it-works', 'pricing', 'faq', 'contact'];
+  const links = product ? ['Overview', 'Investigations', 'Entities', 'Telemetry'] : ['How it works', 'Capabilities', 'Platform', 'Pricing', 'FAQ', 'Contact'];
+  const hrefs = product ? ['#workspace', '#workspace', '#workspace', '#workspace'] : ['how-it-works', 'capabilities', 'dashboard', 'pricing', 'faq', 'contact'];
 
   useEffect(() => {
     if (product) return;
@@ -16,13 +16,14 @@ export function Header({ onProduct, onHome, product = false }: { onProduct?: () 
         const el = document.getElementById(id);
         return el ? { id, y: el.getBoundingClientRect().top } : null;
       }).filter((p): p is { id: string; y: number } => p !== null);
+      const ordered = [...positions].sort((a, b) => a.y - b.y);
       let current = '';
-      for (const p of positions) {
+      for (const p of ordered) {
         if (p.y <= offset) current = p.id;
       }
       const docBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight;
       if (docBottom) {
-        const last = positions[positions.length - 1];
+        const last = ordered[ordered.length - 1];
         if (last) current = last.id;
       }
       setActiveId(current);

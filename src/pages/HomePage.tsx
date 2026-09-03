@@ -37,7 +37,7 @@ export function HomePage({ onProduct, onHome, onPrivacy, onTerms }: { onProduct:
         <DashboardPreview onProduct={onProduct} />
         <AudienceSection />
         <TestimonialSection />
-        <PricingSection onProduct={onProduct} />
+        <PricingSection />
         <FaqSection />
         <AboutContact />
         <DocsSection />

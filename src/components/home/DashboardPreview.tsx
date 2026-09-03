@@ -48,7 +48,7 @@ export function DashboardPreview({ onProduct }: { onProduct: () => void }) {
   }, [revealed, metrics.length]);
 
   return (
-    <section ref={sectionRef} className={`section-pad dashboard-preview ${revealed ? 'dash-revealed' : ''}`}>
+    <section id="dashboard" ref={sectionRef} className={`section-pad dashboard-preview ${revealed ? 'dash-revealed' : ''}`}>
       <div className="section-intro">
         <SectionLabel>SECURITY OPERATIONS DASHBOARD</SectionLabel>
         <h2>Keep investigations and <em>risk in view.</em></h2>
