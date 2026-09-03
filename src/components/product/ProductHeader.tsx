@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { Logo } from '../Logo';
 
 export function ProductHeader({ onHome }: { onHome: () => void }) {
   const [activeId, setActiveId] = useState('');
@@ -30,7 +31,7 @@ export function ProductHeader({ onHome }: { onHome: () => void }) {
 
   return (
     <header className="site-header product-nav">
-      <button className="brand" onClick={onHome} aria-label="Segurara home"><span className="brand-mark"><span /></span> SEGURARA</button>
+      <button className="brand" onClick={onHome} aria-label="Segurara home"><Logo /><span className="brand-text">SEGURARA</span></button>
       <nav className="nav-links">
         {[['Overview', '#overview'], ['Investigation', '#investigation'], ['Assistant', '#assistant'], ['Relationships', '#relationships']].map(([label, href]) => <a className={activeId === href.slice(1) ? 'active' : ''} href={href} key={label}>{label}</a>)}
       </nav>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ChevronRight, Menu, X } from 'lucide-react';
+import { Logo } from './Logo';
 
 export function Header({ onProduct, onHome, product = false }: { onProduct?: () => void; onHome: () => void; product?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,13 +34,13 @@ export function Header({ onProduct, onHome, product = false }: { onProduct?: () 
 
   return (
     <header className={`site-header ${product ? 'workspace-header' : ''}`}>
-      <button className="brand" onClick={() => { onHome(); setMenuOpen(false); }} aria-label="Segurara home"><span className="brand-mark"><span /></span> SEGURARA</button>
+      <button className="brand" onClick={() => { onHome(); setMenuOpen(false); }} aria-label="Segurara home"><Logo /><span className="brand-text">SEGURARA</span></button>
       <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
         {links.map((link, index) => <a className={activeId === hrefs[index] && !product ? 'active' : ''} href={product ? hrefs[index] : `#${hrefs[index]}`} key={link} onClick={() => setMenuOpen(false)}>{link}</a>)}
         <button className="header-cta nav-cta-mobile" onClick={() => { setMenuOpen(false); onProduct?.(); }}>{product ? 'Open marketing site' : 'Explore the platform'} <ChevronRight size={15} /></button>
       </nav>
       <div className="header-actions">
-        <button className="header-cta" onClick={onProduct}>{product ? 'Open marketing site' : 'See the platform'} <ChevronRight size={15} /></button>
+        <button className="header-cta" onClick={onProduct}>{product ? 'Open marketing site' : 'SeguraSecure S.1'} <ChevronRight size={15} /></button>
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen ? <X size={19} /> : <Menu size={19} />}</button>
       </div>
     </header>
