@@ -1,0 +1,7 @@
+import { BrainCircuit, Cloud, Code2, FileSearch, Radar, Terminal } from 'lucide-react';
+import { SectionLabel } from '../../shared/SectionLabel';
+
+export function AudienceSection() {
+  const audience = [['Security Operations', 'Review related activity, risk indicators, and supporting evidence to prioritize analyst attention.', Radar], ['Application Security', 'Examine application, API, identity, workload, and endpoint activity within a connected investigation view.', Code2], ['Cloud Security', 'Bring workload, identity, service, and infrastructure context together for investigation.', Cloud], ['AI Platform Teams', 'Review interactions across AI services, model endpoints, identities, applications, and workloads.', BrainCircuit], ['DevSecOps', 'Connect runtime and application-security findings with relevant development and delivery context.', Terminal], ['Incident Responders', 'Examine event timelines, entity relationships, and available evidence during incident investigation.', FileSearch]] as const;
+  return <section className="section-pad audience-section"><div className="section-intro"><SectionLabel>BUILT FOR SECURITY TEAMS</SectionLabel><h2>Security works better with <em>shared context.</em></h2></div><div className="audience-grid">{audience.map(([title, text, IconComponent]) => <div className="audience-card" key={title}><IconComponent size={19} /><div><h3>{title}</h3><p>{text}</p></div></div>)}</div></section>;
+}
