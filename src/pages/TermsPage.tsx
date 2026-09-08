@@ -22,7 +22,7 @@ export function TermsPage({ onHome }: { onHome: () => void }) {
             <li><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in these Terms and Conditions) refers to Segurara Technologies (Pvt) Ltd, 42 Lotus Arcade, Ward Place, Colombo 07, Sri Lanka.</li>
             <li><strong>Device</strong> means any device that can access the Service such as a computer, a cell phone or a digital tablet.</li>
             <li><strong>Service</strong> refers to the Website.</li>
-            <li><strong>Terms and Conditions</strong> (also referred to as &quot;Terms&quot;) means these Terms and Conditions, including any documents expressly incorporated by reference, which govern Your access to and use of the Service and form the entire agreement between You and the Company regarding the Service. These Terms and Conditions have been created with the help of the <a href="https://www.termsfeed.com/terms-conditions-generator/" target="_blank">TermsFeed Terms and Conditions Generator</a>.</li>
+            <li><strong>Terms and Conditions</strong> (also referred to as &quot;Terms&quot;) means these Terms and Conditions, including any documents expressly incorporated by reference, which govern Your access to and use of the Service and form the entire agreement between You and the Company regarding the Service.</li>
             <li><strong>Third-Party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third party that is displayed, included, made available, or linked to through the Service.</li>
             <li><strong>Website</strong> refers to Segurara, accessible from <a href="https://segurara.com/" rel="external nofollow noopener" target="_blank">https://segurara.com/</a></li>
             <li><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
@@ -75,8 +75,10 @@ export function TermsPage({ onHome }: { onHome: () => void }) {
           <ul>
             <li>By email: info@segurara.com</li>
             <li>By visiting this page on our website: <a href="https://segurara.com/" rel="external nofollow noopener" target="_blank">https://segurara.com/</a></li>
-            <li>By phone:  +94 11 245 7812</li>
-            <li>By mail: 42 Lotus Arcade, Ward Place, Colombo 07, Sri Lanka</li>
+            <li>By phone (Sri Lanka): +94 11 245 7812</li>
+            <li>By phone (United States): +1 415 555 2101</li>
+            <li>By mail (Sri Lanka): 42 Lotus Arcade, Ward Place, Colombo 07, Sri Lanka</li>
+            <li>By mail (United States): 425 Market Street, Suite 310, San Francisco, CA 94105, USA</li>
           </ul>
         </article>
       </main>

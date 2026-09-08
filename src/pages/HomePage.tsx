@@ -43,7 +43,7 @@ export function HomePage({ onProduct, onHome, onPrivacy, onTerms }: { onProduct:
         <DocsSection />
         <FinalCtaSection onProduct={onProduct} />
       </main>
-      <Footer onPrivacy={onPrivacy} onTerms={onTerms} />
+      <Footer onPrivacy={onPrivacy} onTerms={onTerms} onHome={onHome} />
     </div>
   );
 }

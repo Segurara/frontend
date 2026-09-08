@@ -1,12 +1,13 @@
+
 import { useEffect, useState } from 'react';
 import { ChevronRight, Menu, X } from 'lucide-react';
 import { Logo } from './Logo';
 
-export function Header({ onProduct, onHome, product = false }: { onProduct?: () => void; onHome: () => void; product?: boolean }) {
+export function Header({ onProduct, onHome, product = false, navLinks, navHrefs }: { onProduct?: () => void; onHome: () => void; product?: boolean; navLinks?: string[]; navHrefs?: string[] }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState('');
-  const links = product ? ['Overview', 'Investigations', 'Entities', 'Telemetry'] : ['How it works', 'Capabilities', 'Platform', 'Pricing', 'FAQ', 'Contact'];
-  const hrefs = product ? ['#workspace', '#workspace', '#workspace', '#workspace'] : ['how-it-works', 'capabilities', 'dashboard', 'pricing', 'faq', 'contact'];
+  const links = navLinks ?? (product ? ['Overview', 'Investigations', 'Entities', 'Telemetry'] : ['How it works', 'Capabilities', 'Platform', 'Pricing', 'FAQ', 'Contact']);
+  const hrefs = navHrefs ?? (product ? ['#workspace', '#workspace', '#workspace', '#workspace'] : ['how-it-works', 'capabilities', 'dashboard', 'pricing', 'faq', 'contact']);
 
   useEffect(() => {
     if (product) return;
@@ -35,9 +36,23 @@ export function Header({ onProduct, onHome, product = false }: { onProduct?: () 
 
   return (
     <header className={`site-header ${product ? 'workspace-header' : ''}`}>
-      <button className="brand" onClick={() => { onHome(); setMenuOpen(false); }} aria-label="Segurara home"><Logo /><span className="brand-text">SEGURARA</span></button>
+      <button className="brand" onClick={() => { onHome(); setMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} aria-label="Segurara home"><Logo /></button>
       <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
-        {links.map((link, index) => <a className={activeId === hrefs[index] && !product ? 'active' : ''} href={product ? hrefs[index] : `#${hrefs[index]}`} key={link} onClick={() => setMenuOpen(false)}>{link}</a>)}
+        {links.map((link, index) => <a className={activeId === hrefs[index] && !product ? 'active' : ''} href={product ? hrefs[index] : `#${hrefs[index]}`} key={link} onClick={(e) => {
+          setMenuOpen(false);
+          const id = hrefs[index];
+          if (!document.getElementById(id)) {
+            e.preventDefault();
+            onHome?.();
+            setTimeout(() => {
+              const el = document.getElementById(id);
+              if (!el) return;
+              const headerH = document.querySelector('.site-header')?.getBoundingClientRect().height ?? 0;
+              const y = el.getBoundingClientRect().top + window.scrollY - headerH;
+              window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+            }, 120);
+          }
+        }}>{link}</a>)}
         <button className="header-cta nav-cta-mobile" onClick={() => { setMenuOpen(false); onProduct?.(); }}>{product ? 'Open marketing site' : 'Explore the platform'} <ChevronRight size={15} /></button>
       </nav>
       <div className="header-actions">

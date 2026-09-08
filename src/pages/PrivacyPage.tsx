@@ -11,7 +11,7 @@ export function PrivacyPage({ onHome }: { onHome: () => void }) {
           <h1>Privacy Policy</h1>
           <p>Last updated: August 28, 2026</p>
           <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
-          <p>We use Your Personal Data to provide and improve the Service. We collect, use, and disclose Your information as described in this Privacy Policy and, where required by applicable law, only where We have a valid legal basis to do so, including Your consent (where consent is required). This Privacy Policy has been created with the help of the <a href="https://www.termsfeed.com/privacy-policy-generator/" target="_blank">Privacy Policy Generator</a>.</p>
+          <p>We use Your Personal Data to provide and improve the Service. We collect, use, and disclose Your information as described in this Privacy Policy and, where required by applicable law, only where We have a valid legal basis to do so, including Your consent (where consent is required).</p>
           <h2>Interpretation and Definitions</h2>
           <h3>Interpretation</h3>
           <p>The words whose initial letters are capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
@@ -191,8 +191,10 @@ export function PrivacyPage({ onHome }: { onHome: () => void }) {
           <ul>
             <li>By email: info@segurara.com</li>
             <li>By visiting this page on Our Website: <a href="https://segurara.com/" rel="external nofollow noopener" target="_blank">https://segurara.com/</a></li>
-            <li>By phone:  +94 11 245 7812</li>
-            <li>By mail: 42 Lotus Arcade, Ward Place, Colombo 07, Sri Lanka</li>
+            <li>By phone (Sri Lanka): +94 11 245 7812</li>
+            <li>By phone (United States): +1 415 555 2101</li>
+            <li>By mail (Sri Lanka): 42 Lotus Arcade, Ward Place, Colombo 07, Sri Lanka</li>
+            <li>By mail (United States): 425 Market Street, Suite 310, San Francisco, CA 94105, USA</li>
           </ul>
         </article>
       </main>

@@ -29,9 +29,9 @@ const plans = [
 ];
 
 const features: Record<string, string[]> = {
-  'Platform Starter': ['Platform overview', 'Capability walkthrough', 'Example investigation workflow', 'Requirements discussion'],
-  'Professional Evaluation': ['Use-case discovery', 'Technical requirements review', 'Guided interface demonstration', 'Evaluation-scope planning'],
-  'Enterprise Discussion': ['Architecture discussion', 'Integration requirements', 'Governance considerations', 'Deployment-option review'],
+  'Platform Starter': ['Platform overview', 'Capability walkthrough', 'Example investigation workflow', 'Requirements discussion', 'Core security dashboard access', 'Sample threat-signal analysis', 'Guided platform onboarding', 'Basic investigation templates', 'Email-based support'],
+  'Professional Evaluation': ['Use-case discovery', 'Technical requirements review', 'Guided interface demonstration', 'Evaluation-scope planning', 'Customized investigation workflow', 'Security-data source assessment', 'Integration-readiness review', 'Evaluation findings summary', 'Dedicated technical guidance'],
+  'Enterprise Discussion': ['Architecture discussion', 'Integration requirements', 'Governance considerations', 'Deployment-option review', 'Custom platform configuration', 'Enterprise integration planning', 'Identity and access requirements', 'Security and compliance review', 'Dedicated implementation support'],
 };
 
 export function PricingSection() {
